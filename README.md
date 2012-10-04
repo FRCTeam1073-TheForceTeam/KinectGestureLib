@@ -1,0 +1,2 @@
+This is a project that makes it easy to setup Kinect gestures in the fashion that we integrated into last year's dashboard.
+A gesture class gets Vector data passed into it from the NUI, and contains an easy to integrate gesutre system.
