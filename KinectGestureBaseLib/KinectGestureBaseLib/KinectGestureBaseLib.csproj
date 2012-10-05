@@ -50,14 +50,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Coding4Fun.Kinect.Common\ImageFrameCommonExtensions.cs" />
-    <Compile Include="Coding4Fun.Kinect.Common\SkeletalCommonExtensions.cs" />
-    <Compile Include="Coding4Fun.Kinect.WinForm\BitmapExtensions.cs" />
-    <Compile Include="Coding4Fun.Kinect.WinForm\GlobalSuppressions.cs" />
-    <Compile Include="Coding4Fun.Kinect.WinForm\ImageFormat.cs" />
-    <Compile Include="Coding4Fun.Kinect.WinForm\ImageFrameExtensions.cs" />
-    <Compile Include="Coding4Fun.Kinect.WinForm\SkeletalExtensions.cs" />
     <Compile Include="Gesture.cs" />
+    <Compile Include="Gestures\ArmsExtended.cs" />
+    <Compile Include="Gestures\SpreadLegs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -79,7 +74,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Coding4Fun.Kinect.WinForm\Coding4Fun.Kinect.WinForm.csproj" />
+    <Content Include="Gestures\README.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Examples\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

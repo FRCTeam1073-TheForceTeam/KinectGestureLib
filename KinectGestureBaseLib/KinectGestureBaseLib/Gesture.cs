@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Coding4Fun.Kinect.WinForm;
-using Coding4Fun.Kinect.Common;
 using Microsoft.Research.Kinect.Nui;
 namespace KinectGestureBase
 {
