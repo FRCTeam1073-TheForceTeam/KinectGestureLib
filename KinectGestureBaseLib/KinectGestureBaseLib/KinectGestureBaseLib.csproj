@@ -34,6 +34,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Research.Kinect, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Microsoft.Research.Kinect.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,6 +50,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Coding4Fun.Kinect.Common\ImageFrameCommonExtensions.cs" />
+    <Compile Include="Coding4Fun.Kinect.Common\SkeletalCommonExtensions.cs" />
+    <Compile Include="Coding4Fun.Kinect.WinForm\BitmapExtensions.cs" />
+    <Compile Include="Coding4Fun.Kinect.WinForm\GlobalSuppressions.cs" />
+    <Compile Include="Coding4Fun.Kinect.WinForm\ImageFormat.cs" />
+    <Compile Include="Coding4Fun.Kinect.WinForm\ImageFrameExtensions.cs" />
+    <Compile Include="Coding4Fun.Kinect.WinForm\SkeletalExtensions.cs" />
+    <Compile Include="Gesture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -65,6 +77,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Coding4Fun.Kinect.WinForm\Coding4Fun.Kinect.WinForm.csproj" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
