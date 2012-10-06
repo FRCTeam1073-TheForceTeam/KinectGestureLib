@@ -44,7 +44,7 @@ namespace KinectGestureBase
         }
         protected DateTime delayDateTime = new DateTime();
         protected abstract double getDelayTimeSeconds();    //implement the delay between when the kinect looks for a gesture.
-        protected abstract bool isDoingGesture();           //implement the gesture by reading vectors... public so can be accessed from other gestures (overrides the DateTime lock to reuse code!)
+        public abstract bool isDoingGesture();           //implement the gesture by reading vectors... public so can be accessed from other gestures (overrides the DateTime lock to reuse code!)
         public virtual String getDescription() { return "Unnamed Gesture"; }    //strongly encouraged to override - With name and/or Description
         public bool timeDelayHasPassed()
         {

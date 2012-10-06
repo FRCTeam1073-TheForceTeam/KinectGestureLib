@@ -1,4 +1,6 @@
-﻿using System;
+﻿//simple extension of Gesture.cs to see if arms are extended
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +14,7 @@ namespace KinectGestureBase.Gestures
         {
             return 0.75;
         }
-        protected override bool isDoingGesture()
+        public override bool isDoingGesture()
         {
             float x_threshold = 0.6f;
             float y_threshold = 0.1f;

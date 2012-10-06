@@ -1,4 +1,6 @@
-﻿using System;
+﻿//simple extension off of Gesture.cs to see if legs are spread. you can take pass in a threshold, or construct using a default
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,7 +18,7 @@ namespace KinectGestureBase.Gestures
         {
             return "Gesture that sees if legs are spread by " + spreadDistance + " meters";
         }
-        protected override bool isDoingGesture()
+        public override bool isDoingGesture()
         {
             return getDistanceX(KNEE_LEFT, KNEE_RIGHT) >= spreadDistance;
         }
