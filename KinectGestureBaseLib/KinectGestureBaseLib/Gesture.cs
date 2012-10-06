@@ -56,5 +56,17 @@ namespace KinectGestureBase
         protected static float getDistanceX(Vector one, Vector two) { return Math.Abs(one.X - two.X); }
         protected static float getDistanceY(Vector one, Vector two) { return Math.Abs(one.Y - two.Y); }
         protected static float getDistanceZ(Vector one, Vector two) { return Math.Abs(one.Z - two.Z); }
+        protected static bool touching(Vector one, Vector two)  {return touching(new Vector[] { one, two });}
+        protected static bool touching(Vector[] joints)
+        {
+            if( joints.Length < 2) return false;
+            float threshold = 0.15f;
+            for (int i = 1; i < joints.Length; i++)
+            {
+                Vector a = joints[i - 1], b = joints[i];
+                if (getDistanceX(a, b) > threshold && getDistanceY(a, b) > threshold && getDistanceZ(a, b) > threshold) return false;
+            }
+            return true;
+        }
     }
 }
