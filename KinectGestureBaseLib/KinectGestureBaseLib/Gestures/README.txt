@@ -1,0 +1,1 @@
+﻿The Gestures in tis directory are examples on how to write gestures with this Kinect API.
