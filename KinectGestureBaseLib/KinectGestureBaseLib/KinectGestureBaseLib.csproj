@@ -53,6 +53,7 @@
     <Compile Include="Gesture.cs" />
     <Compile Include="Gestures\ArmsExtended.cs" />
     <Compile Include="Gestures\SpreadLegs.cs" />
+    <Compile Include="Gestures\Star.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
