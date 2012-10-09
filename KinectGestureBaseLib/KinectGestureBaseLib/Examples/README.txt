@@ -8,3 +8,4 @@ To use the class, simply:
 	4.) in the NUI scanning logic, check for timeDelayHasPassed() on each Gesture.
 	5.) if that's true, check for isDoingGesture() on each gesture.
 	6.) run the appropriate code if your gesture is validaed. In my exmaple I display getInfo() in a MessageBox on each passed Gesture...
+	7.) if you want to implement the time delay again, call updateGesture on your Gesture object.
