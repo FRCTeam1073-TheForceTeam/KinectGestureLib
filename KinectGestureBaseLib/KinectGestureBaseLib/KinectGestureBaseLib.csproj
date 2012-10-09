@@ -50,8 +50,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Examples\ExampleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Examples\ExampleForm.Designer.cs">
+      <DependentUpon>ExampleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\ExampleRunner.cs" />
     <Compile Include="Gesture.cs" />
     <Compile Include="Gestures\ArmsExtended.cs" />
+    <Compile Include="Gestures\HandForward.cs" />
     <Compile Include="Gestures\SpreadLegs.cs" />
     <Compile Include="Gestures\Star.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -75,11 +83,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Examples\README.txt" />
     <Content Include="Gestures\README.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Examples\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
