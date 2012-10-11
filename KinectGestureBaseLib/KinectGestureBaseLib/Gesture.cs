@@ -43,7 +43,7 @@ namespace KinectGestureBase
             FOOT_RIGHT = data.Joints[JointID.FootRight].Position;
         }
         protected DateTime delayDateTime = new DateTime();
-        protected abstract double getDelayTimeSeconds();    //implement the delay between when the kinect looks for a gesture.
+        protected virtual double getDelayTimeSeconds() { return 1.0; }    //implement the delay between when the kinect looks for a gesture.
         public abstract bool isDoingGesture();           //implement the gesture by reading vectors... public so can be accessed from other gestures (overrides the DateTime lock to reuse code!)
         public virtual void updateGesture()             //override if you want to...
         {
@@ -52,12 +52,7 @@ namespace KinectGestureBase
         public virtual String getDescription() { return "Unnamed Gesture"; }    //strongly encouraged to override - With name and/or Description
         public bool timeDelayHasPassed()
         {
-            if ((DateTime.Now - delayDateTime).TotalSeconds >= getDelayTimeSeconds() || delayDateTime == new DateTime())
-            {
-                delayDateTime = DateTime.Now;
-                return true;
-            }
-            return false;
+            return ((DateTime.Now - delayDateTime).TotalSeconds >= getDelayTimeSeconds() || delayDateTime == new DateTime());
         }
         //other useful functions
         protected static float getDistanceX(Vector one, Vector two) { return Math.Abs(one.X - two.X); }
