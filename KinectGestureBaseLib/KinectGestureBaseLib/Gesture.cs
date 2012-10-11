@@ -43,7 +43,7 @@ namespace KinectGestureBase
             FOOT_RIGHT = data.Joints[JointID.FootRight].Position;
         }
         protected DateTime delayDateTime = new DateTime();
-        protected virtual double getDelayTimeSeconds() { return 1.0; }    //implement the delay between when the kinect looks for a gesture.
+        protected virtual double getDelayTimeSeconds() { return 1.0; }    //the delay between when the kinect looks for a gesture.
         public abstract bool isDoingGesture();           //implement the gesture by reading vectors... public so can be accessed from other gestures (overrides the DateTime lock to reuse code!)
         public virtual void updateGesture()             //override if you want to...
         {

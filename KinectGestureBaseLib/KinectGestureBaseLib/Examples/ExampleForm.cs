@@ -30,7 +30,9 @@ namespace KinectGestureBase.Examples
             nui.SkeletonFrameReady += new EventHandler<SkeletonFrameReadyEventArgs>(nui_SkeletonFrameReady);
             gestures = new List<Gesture>();
             gestures.Add(new HandForward(true));
-            gestures.Add(new Star());
+            foreach(Gesture g in gestures){
+                g.updateGesture();
+            }
             InitializeComponent();
         }
         void nui_SkeletonFrameReady(object sender, SkeletonFrameReadyEventArgs e)
