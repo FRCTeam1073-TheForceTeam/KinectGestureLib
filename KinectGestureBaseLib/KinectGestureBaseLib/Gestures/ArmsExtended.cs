@@ -16,7 +16,7 @@ namespace KinectGestureBase.Gestures
         }
         public override bool isDoingGesture()
         {
-            float x_threshold = 0.6f;
+            float x_threshold = 0.375f;
             float y_threshold = 0.1f;
             bool x = getDistanceX(HAND_LEFT, SHOULDER_LEFT) >= x_threshold && getDistanceX(HAND_RIGHT, SHOULDER_RIGHT) >+ x_threshold;
             bool y = getDistanceY(HAND_LEFT, HAND_RIGHT) <= y_threshold;    //make sure they're in a paralell y plane

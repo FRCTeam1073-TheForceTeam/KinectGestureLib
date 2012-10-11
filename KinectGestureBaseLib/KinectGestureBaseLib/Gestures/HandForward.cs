@@ -11,7 +11,7 @@ namespace KinectGestureBase.Gestures
         protected override double getDelayTimeSeconds() { return 1.5; }
         public override bool isDoingGesture()
         {
-            const float Z_THRESHOLD = 0.65f;
+            const float Z_THRESHOLD = 0.45f;
             return getDistanceZ(leftHand ? HAND_LEFT : HAND_RIGHT, SHOULDER_CENTER) >= Z_THRESHOLD;
         }
         public override string getDescription()
