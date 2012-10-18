@@ -58,7 +58,13 @@ namespace KinectGestureBase
         protected static float getDistanceX(Vector one, Vector two) { return Math.Abs(one.X - two.X); }
         protected static float getDistanceY(Vector one, Vector two) { return Math.Abs(one.Y - two.Y); }
         protected static float getDistanceZ(Vector one, Vector two) { return Math.Abs(one.Z - two.Z); }
-        protected static bool touching(Vector one, Vector two)  {return touching(new Vector[] { one, two });}
+        protected static bool isLeft(Vector one, Vector two)     { return one.X < two.X; }
+        protected static bool isRight(Vector one, Vector two)    { return one.X > two.X; }
+        protected static bool isBelow(Vector one, Vector two)    { return one.Y < two.Y; }
+        protected static bool isAbove(Vector one, Vector two)    { return one.Y > two.Y; }
+        protected static bool isBehind(Vector one, Vector two)   { return one.Z > two.Z; }
+        protected static bool isFront(Vector one, Vector two)    { return one.Z < two.Z; }
+        protected static bool touching(Vector one, Vector two)   {return touching(new Vector[] { one, two });}
         protected static bool touching(Vector[] joints)
         {
             if( joints.Length < 2) return false;
