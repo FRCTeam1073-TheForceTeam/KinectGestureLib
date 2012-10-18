@@ -58,6 +58,26 @@ namespace KinectGestureBase
         protected static float getDistanceX(Vector one, Vector two) { return Math.Abs(one.X - two.X); }
         protected static float getDistanceY(Vector one, Vector two) { return Math.Abs(one.Y - two.Y); }
         protected static float getDistanceZ(Vector one, Vector two) { return Math.Abs(one.Z - two.Z); }
+        protected static double get2DDistance(Vector one, Vector two)   
+        {
+            //kinect has vectors as floats. sqrt returns a double
+            float x = two.X - one.X;
+            float y = two.Y - one.Y;
+            return Math.Sqrt((double)(x * x + y * y));
+        }
+        protected static double get3DDistance(Vector one, Vector two)
+        {
+            float x = two.X - one.X;
+            float y = two.Y - one.Y;
+            float z = two.Z - one.Z;
+            return Math.Sqrt((double)(x * x + y * y + z * z));
+        }
+        protected static float getSlope(Vector one, Vector two)
+        {
+            float rise = two.Y - one.Y;
+            float run = two.X - one.X;
+            return rise / run;
+        }
         protected static bool isLeft(Vector one, Vector two)     { return one.X < two.X; }
         protected static bool isRight(Vector one, Vector two)    { return one.X > two.X; }
         protected static bool isBelow(Vector one, Vector two)    { return one.Y < two.Y; }
