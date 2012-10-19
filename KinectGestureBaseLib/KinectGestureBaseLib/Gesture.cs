@@ -19,6 +19,9 @@ namespace KinectGestureBase
         static protected Vector ANKLE_LEFT, ANKLE_RIGHT;
         static protected Vector FOOT_LEFT, FOOT_RIGHT;
         #endregion 
+        #region useful constants
+        protected const float FIVE_INCHES = 1.27f;
+        #endregion
         static public void updateJoints(SkeletonData data)
         {
             HEAD = data.Joints[JointID.Head].Position;
@@ -78,6 +81,9 @@ namespace KinectGestureBase
             float run = two.X - one.X;
             return rise / run;
         }
+        protected static bool sameXPlane(Vector one, Vector two) { return getDistanceX(one, two) <= FIVE_INCHES; }
+        protected static bool sameYPlane(Vector one, Vector two) { return getDistanceY(one, two) <= FIVE_INCHES; }
+        protected static bool sameZPlane(Vector one, Vector two) { return getDistanceZ(one, two) <= FIVE_INCHES; }
         protected static bool isLeft(Vector one, Vector two)     { return one.X < two.X; }
         protected static bool isRight(Vector one, Vector two)    { return one.X > two.X; }
         protected static bool isBelow(Vector one, Vector two)    { return one.Y < two.Y; }
@@ -88,11 +94,11 @@ namespace KinectGestureBase
         protected static bool touching(Vector[] joints)
         {
             if( joints.Length < 2) return false;
-            float threshold = 0.15f;
             for (int i = 1; i < joints.Length; i++)
             {
                 Vector a = joints[i - 1], b = joints[i];
-                if (getDistanceX(a, b) > threshold && getDistanceY(a, b) > threshold && getDistanceZ(a, b) > threshold) return false;
+                bool test = sameXPlane(a, b) && sameYPlane(a, b) && sameZPlane(a, b);
+                if (!test) return false;
             }
             return true;
         }
