@@ -20,7 +20,7 @@ namespace KinectGestureBase
         static protected Vector FOOT_LEFT, FOOT_RIGHT;
         #endregion 
         #region useful constants
-        protected const float FIVE_INCHES = 1.27f;
+        protected static const float FIVE_INCHES = 1.27f;
         #endregion
         static public void updateJoints(SkeletonData data)
         {
